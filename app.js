@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 let proveedores  = require('./lib/PROVEEDORES');
 //let clientes   = require('./lib/CLIENTES');
+const llaves     = require('./lib/LLAVES');
 const cache      = require('./lib/CACHE');
 const users      = require('./lib/USERS');
 const empleados  = require('./lib/EMPLEADOS');
@@ -49,6 +50,6 @@ app.use(cache);
 app.use(users);
 app.use(empleados);
 app.use(reportes);
-
+app.use(llaves);
 app.listen(process.env.PORT);
 console.log(process.env.PORT);
