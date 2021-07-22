@@ -29,6 +29,6 @@
     "pdf-creator-node": "^1.4.1",
     "qrcode": "^1.4.4",
     "winston": "^3.2.1",
-    "xlsx": "^0.15.4"
+    "xlsx": "^0.17.0"
   }
 }
