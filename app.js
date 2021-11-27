@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-let proveedores  = require('./lib/PROVEEDORES');
-let clientes   = require('./lib/CLIENTES');
+const proveedores  = require('./lib/PROVEEDORES');
+const clientes   = require('./lib/CLIENTES');
 const llaves     = require('./lib/LLAVES');
 const cache      = require('./lib/CACHE');
 const users      = require('./lib/USERS');
@@ -10,10 +10,16 @@ const reportes   = require('./lib/REPORTES');
 const proyectos  = require('./lib/PROYECTOS');
 const claves     = require('./lib/CLAVES');
 const catalogos  = require('./lib/CATALOGOS');
+const maquinas   = require('./lib/MAQUINAS');
+const images     = require('./lib/IMAGES');
+const servicios  = require('./lib/SERVICIOS');
 const bodyParser = require('body-parser');
 const cors       = require('cors');
 const expJwt     = require('express-jwt');
 const dotenv     = require('dotenv');
+const path       = require('path'); 
+
+
 dotenv.config();
  
 //Parsers   
@@ -42,7 +48,7 @@ app.use(expJwt({secret:process.env.SECRET, getToken: function fromHeaderOrQuerys
         }
     }
     return null; 
-}}).unless({path:['/users/login','/users/livesession']}));
+}}).unless({path:['/users/login','/users/livesession','/maquinas/printlabels']}));
     
 app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
@@ -54,6 +60,12 @@ app.use(function (err, req, res, next) {
     }
 });
 
+
+var dir = path.join('Y:/DATOS');
+
+app.use(express.static(dir));
+
+
 app.use(proveedores);   
 app.use(clientes);
 app.use(cache);
@@ -64,5 +76,8 @@ app.use(llaves);
 app.use(proyectos);
 app.use(claves);
 app.use(catalogos);
+app.use(maquinas);
+app.use(images);
+app.use(servicios);
 app.listen(process.env.PORT);
 console.log(process.env.PORT);

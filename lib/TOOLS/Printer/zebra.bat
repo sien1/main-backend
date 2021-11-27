@@ -1,0 +1,1 @@
+COPY /B C:\Users\olish\APPS\altas\BACKEND\montesquieu.zpl \\ENGINER_DESIGN\ZebraLabeler
