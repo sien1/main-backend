@@ -15,12 +15,16 @@ const images     = require('./lib/IMAGES');
 const servicios  = require('./lib/SERVICIOS');
 const bodyParser = require('body-parser');
 const cors       = require('cors');
-const expJwt     = require('express-jwt');
-const dotenv     = require('dotenv');
+const expJwt     = require('express-jwt');  
 const path       = require('path'); 
+const dotenv     = require('dotenv');
 
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, `./.env.${process.env.NODE_ENV}`)});
+
+
+
+
  
 //Parsers   
 app.use(bodyParser.urlencoded({
@@ -79,5 +83,5 @@ app.use(catalogos);
 app.use(maquinas);
 app.use(images);
 app.use(servicios);
-app.listen(process.env.PORT);
-console.log(process.env.PORT);
+app.listen(process.env.PORT, '0.0.0.0');
+console.log('Aplicacion corriendo en el puerto ' + process.env.PORT);
