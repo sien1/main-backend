@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start":"set NODE_ENV=production&&nodemon app.js",
-    "start_development":"set NODE_ENV=development&&nodemon app.js",
+    "start": "NODE_ENV=production node app.js",
+    "start_development": "NODE_ENV=development node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -24,7 +24,7 @@
     "express-jwt": "^5.3.3",
     "html-pdf": "^2.2.0",
     "hybrid-crypto-js": "^0.2.4",
-    "json-as-xlsx": "^2.2.3",
+    "json-as-xlsx": "^2.4.2",
     "jsonwebtoken": "^8.5.1",
     "mssql": "^6.0.1",
     "node-cmd": "^5.0.0",
@@ -35,7 +35,7 @@
     "png-to-jpeg": "^1.0.1",
     "qrcode": "^1.4.4",
     "vcard-creator": "^0.4.1",
-    "winston": "^3.2.1",
+    "winston": "^3.8.1",
     "xlsx": "^0.17.0"
   }
 }
