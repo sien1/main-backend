@@ -13,7 +13,7 @@
             ^FO30,110^FDJOSE HUMBERTO PEREYRA^FS
             ^CF0,100
             
-            ^FO30,160^FD383^FS
+            ^FO30,160^FD6^FS
             
             ^CF0,25
             
@@ -21,7 +21,7 @@
             
             ^FO465,60
             ^BQN,2,6,Q,7
-            ^FDQA,https://api.whatsapp.com/send?phone=5216567522752&text=09c423a46aea35c4be00f383d865492e4b71^FS
+            ^FDQA,https://api.whatsapp.com/send?phone=5216567522752&text=112b15c4d3f6a50610dbd60cfa57ffc153db^FS
             ^FO15,30^GB785,370,1^FS
             ^FO15,30^GB410,370,1^FS
             
