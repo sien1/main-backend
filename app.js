@@ -65,7 +65,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-var dir = path.join('Y:/DATOS');
+var dir = path.join(process.env.BASE_RESOURCE_SERVER);
 
 app.use(express.static(dir));
 
