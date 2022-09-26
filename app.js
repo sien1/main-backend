@@ -19,12 +19,7 @@ const expJwt     = require('express-jwt');
 const path       = require('path'); 
 const dotenv     = require('dotenv');
 
-
 dotenv.config({ path: path.join(__dirname, `./.env.${process.env.NODE_ENV}`)});
-
-
-
-
  
 //Parsers   
 app.use(bodyParser.urlencoded({
